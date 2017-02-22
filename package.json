@@ -1,0 +1,22 @@
+{
+  "name": "yada",
+  "version": "0.0.1",
+  "description": "an images and video viewer and tool for nodejs",
+  "author": "june_01",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuneAndGreen/yada.git"
+  },
+  "keywords": [
+    "image",
+    "jpeg",
+    "jpg",
+    "png",
+    "gif",
+    "viewer",
+    "video"
+  ],
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}
