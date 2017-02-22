@@ -7,6 +7,10 @@
     "type": "git",
     "url": "git+https://github.com/JuneAndGreen/yada.git"
   },
+  "main": "index.js",
+  "bin": {
+    "hala": "./bin/yada.js"
+  },
   "keywords": [
     "image",
     "jpeg",
@@ -18,5 +22,8 @@
   ],
   "license": "MIT",
   "devDependencies": {},
-  "dependencies": {}
+  "dependencies": {
+    "commander": "^2.9.0",
+    "hala": "0.0.6"
+  }
 }
