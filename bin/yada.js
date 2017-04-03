@@ -15,17 +15,13 @@ commander
   .version(require('../package.json').version)
 
   .option('-p, --port <port>', '代理服务器端口，默认为8000', parseInt)
-  .option('-c, --config [path]', '配置文件路径，默认取当前工作路径下的hala.js，此配置文件里的配置项优先级最高')
-  .option('-w, --webroot [path]', '代理服务器的根目录，默认是process.cwd()')
-  .option('-v, --viewroot [path]', '代理服务器的视图目录，默认是webroot的值')
-  .option('-r, --resroot [path]', '代理服务器的资源目录，默认是webroot的值')
-  .option('-u, --uploadroot [path]', '代理服务器的文件上传暂存目录，默认是webroot的值')
+  .option('-r, --root [path]', '图片或视频目录，默认是process.cwd()')
   .option('--no-launch', '是否要停止自动打开浏览器，默认为false')
-  .option('--https', '是否要切换成https服务，默认为false')
 
   .parse(process.argv)
 
   .once('done', () => {
+    commander.launch = !commander.noLaunch;
     new Yada(commander);
   });
 

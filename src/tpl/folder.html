@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <title>YADA 图片预览(${wholePath})</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <link rel="shortcut icon" href="${icons.favicon}" type="image/x-icon" />
+
+  <style type="text/css">
+    ${css}
+
+    /* 图标 */
+    .file .icon \{
+      background:url(${icons.file}) left top no-repeat;
+    \}
+  </style>
+</head>
+<body>
+  <h2 class="current">当前目录：
+    <strong id="dir">${pathname}</strong>
+  </h2>
+  <ul class="m-folder">
+    {list images as item}
+      <li class="file">
+        <i class="icon"></i>
+        <a href="${pathname}?detail&now=${item.name}">${item.name}</a>
+      </li>
+    {/list}
+  </ul>
+
+  <div class="helper">
+    {if qrcode}
+    <div class="qrcode">
+      <div id="qrcode">
+        {qrcode}
+      </div>
+      <h3 class="title">扫描二维码在移动设备打开</h3>
+    </div>
+    {/if}
+
+    <div class="ips">
+      <h3>切换到其他ip：</h3>
+      <ul>
+        {list ips as ip}
+        <li><a  href="http://${ip + ':' + port + pathname}">${ip + ':' + port}</a></li>
+        {/list}
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
